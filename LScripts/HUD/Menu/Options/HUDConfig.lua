@@ -4,6 +4,8 @@ HUDConfig =
 	bgEndFrame   = { 180, 267, 291 },
 
 	fontBigSize = 36,
+	fontBig		= "timesbd",
+	fontSmall	= "timesbd",
 
 	backAction = "PainMenu:ApplySettings(true); HUD.SetTransparency(Cfg.HUDTransparency); PainMenu:ActivateScreen(OptionsMenu)",
 	applyAction = "",
@@ -75,7 +77,7 @@ HUDConfig =
 			desc = TXT.MenuDesc.Crosshair,
 			option = "Crosshair",
 			minValue = 1,
-			maxValue = 32,
+			maxValue = 35,
 			x	 = 160,
 			y	 = 330,
 			action = "",
@@ -88,7 +90,8 @@ HUDConfig =
 				"HUD/crossy/cross97", "HUD/crossy/cross98", "HUD/crossy/cross99", "HUD/crossy/cross991",
 				"HUD/crossy/cross992", "HUD/crossy/cross993", "HUD/crossy/cross994", "HUD/crossy/cross995",
 				"HUD/crossy/cross996", "HUD/crossy/cross997", "HUD/crossy/cross998", "HUD/crossy/cross999",
-				"HUD/crossy/cross9991", "HUD/crossy/cross9992", "HUD/crossy/cross9993", "HUD/crossy/cross9994"
+				"HUD/crossy/cross9991", "HUD/crossy/cross9992", "HUD/crossy/cross9993", "HUD/crossy/cross9994",
+				"../PKPlusData/Crosshairs/crosshairc", "../PKPlusData/Crosshairs/crosshairb" 
 			}
 		},
 		

@@ -16,6 +16,7 @@ function FX_Spawn:OnPrecache()
 end
 
 function FX_Spawn:OnCreateEntity()
+
     self:BindFX("spawn_effect",0.12,"e1")
     self:BindFX("spawn_effect",0.12,"e2")
     self:BindFX("spawn_effect",0.12,"e3")

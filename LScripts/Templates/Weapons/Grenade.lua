@@ -17,11 +17,13 @@ function Grenade:OnCreateEntity()
 end
 --============================================================================
 function Grenade:Client_OnCreateEntity(entity)
-
+    
+    if not Cfg.NoSmoke then
     local x,y,z = ENTITY.GetPosition(entity)
     local smokefx = AddPFX("GrenadeSmoke",1,Vector:New(x,y,z))
     ENTITY.RegisterChild(entity,smokefx)
     PARTICLE.SetParentOffset(smokefx,0,-0.15,0)
+    end
 
     local e = ENTITY.Create(ETypes.Trail,"trail_grenade","trailName")
     ENTITY.SetPosition(e,0,-0.15,0)
@@ -69,7 +71,7 @@ end
 --============================================================================
 function Grenade:CL_GasFX(x,y,z)    
     PlaySound3D("impacts/grenade-wm-explode",x,y,z,20,50)
-    AddPFX("molotowexplo",0.3, Vector:New(x,y,z))
+    if not Cfg.NoExplosions then AddPFX("molotowexplo",0.3, Vector:New(x,y,z)) end
     
     local s = Templates["StakeGunGL.CWeapon"]:GetSubClass()
     
@@ -132,7 +134,7 @@ function Grenade:Client_Explosion(entity,x,y,z)
     
     -- special FX
     SOUND.Play3D("weapon_grenade_explosion",x,y,z,30,200)
-    AddPFX("Grenade",0.4,Vector:New(x,y,z))            
+    if not Cfg.NoExplosions then AddPFX("Grenade",0.4,Vector:New(x,y,z)) end           
     
     if Game.GMode == GModes.SingleGame then 
         -- physical parts

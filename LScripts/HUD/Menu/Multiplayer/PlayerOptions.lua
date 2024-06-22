@@ -2,6 +2,8 @@ PlayerOptions =
 {
 	bgStartFrame = { 120, 243, 268 },
 	bgEndFrame   = { 180, 267, 291 },
+	fontBig		= "timesbd",
+	fontSmall	= "timesbd",
 
 
 	fontBigSize = 36,
@@ -84,8 +86,8 @@ PlayerOptions =
 			text = TXT.Menu.PlayerModel,
 			desc = TXT.MenuDesc.PlayerModel,
 			option = "PlayerModel",
-			values = { 1, 2, 3, 4, 5, 6, 7 },
-			visible = { TXT.Menu.Model1, TXT.Menu.Model2, TXT.Menu.Model3, TXT.Menu.Model4, TXT.Menu.Model7, TXT.Menu.Model5, TXT.Menu.Model6 },
+			values = {2},
+			visible = {TXT.Menu.Model2},
 			x	 = 80,
 			y	 = 340,
 			action = "",

@@ -117,6 +117,7 @@ function BoltGunHeater:StickShot(nr,player,ox,oy,oz)
 end
 --============================================================================
 function BoltGunHeater:Fire(prevstate,combo) -- Stake
+Game:AddToStats(self.ObjOwner.ClientID, AttackTypes.BoltStick, 0, 5, 0)
     if not combo then combo = 0 end
     local s = self:GetSubClass()
     if self.ObjOwner.Ammo.Bolt > 0 then                
@@ -145,6 +146,7 @@ function BoltGunHeater:OnFinishFire(oldstate)
 end
 --============================================================================
 function BoltGunHeater:BombShot(nr,player,ox,oy,oz)
+
     -- create grenade object
     local obj = GObjects:Add(TempObjName(),CloneTemplate("HeaterBomb.CItem"))
     obj.ObjOwner = player		
@@ -185,7 +187,7 @@ end
 -- ALT FIRE - GRENADE (Server Side)
 --============================================================================
 function BoltGunHeater:AltFire() -- bomb
-    
+    Game:AddToStats(self.ObjOwner.ClientID, AttackTypes.HeaterBomb, 0, 5, 0)
     --if Game.GMode ~= GModes.SingleGame then 
     --    self._ActionState = "Idle"
     --    self._altfire = false

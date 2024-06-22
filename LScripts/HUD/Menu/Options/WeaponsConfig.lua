@@ -8,6 +8,8 @@ WeaponsConfig =
 
 	menuWidth   = 880,
 	fontBigSize = 20,
+	fontBig		= "timesbd",
+	fontSmall	= "timesbd",
 
 	items =
 	{

@@ -111,6 +111,7 @@ function RifleFlameThrower:DrawHUD(delta)
 end
 --============================================================================
 function RifleFlameThrower:Fire()
+	Game:AddToStats(self.ObjOwner.ClientID, AttackTypes.Rifle, 0, 1, 0)
     local s = self:GetSubClass()
     if self.ObjOwner.Ammo.Rifle > 0 then
         self.StartFireFX(self.ObjOwner._Entity, self.ObjOwner.Ammo.Rifle)
@@ -164,7 +165,7 @@ Network:RegisterMethod("RifleFlameThrower.OnReloadFX", NCallOn.ServerAndSingleCl
 -- ALT FIRE -
 --============================================================================
 function RifleFlameThrower:AltFire()
-
+Game:AddToStats(self.ObjOwner.ClientID, AttackTypes.FlameThrower, 0, 1, 0)
     if Game.GMode ~= GModes.SingleGame then 
         self._ActionState = "Idle"
         self._altfire = false

@@ -7,14 +7,14 @@ OptionsMenu =
 
 	backAction = "PainMenu:ActivateScreen(MainMenu)",
 	
-	textColor	= R3D.RGBA( 100, 100, 100, 255 ),
+	textColor	= R3D.RGBA( 255, 255, 255, 255 ),
 	disabledColor = R3D.RGBA( 155, 155, 155, 255 ),
 	
-	fontBigTex  = "HUD/font_texturka_alpha",
-	fontSmallTex  = "HUD/font_texturka_alpha",
+	fontBigTex  = "../PKPlusData/font_texturka_alpha",
+	fontSmallTex  = "../PKPlusData/font_texturka_alpha",
 	descColor	= R3D.RGB( 255, 255, 255 ),
 	
-	useItemBG = true,
+	useItemBG = false,
 
 	items =
 	{
@@ -22,8 +22,8 @@ OptionsMenu =
 		{
 			text = TXT.Menu.Controls,
 			desc = TXT.MenuDesc.Controls,
-			x	 = -1,
-			y	 = 230,
+			x	 = 15,
+			y	 = 630,
 			action = "PainMenu:ActivateScreen(ControlsConfig)",
 		},
 		
@@ -31,8 +31,8 @@ OptionsMenu =
 		{
 			text = TXT.Menu.HUD,
 			desc = TXT.MenuDesc.HUD,
-			x	 = -1,
-			y	 = 310,
+			x	 = 15,
+			y	 = 390,
 			action = "PainMenu:ActivateScreen(HUDConfig)",
 		},
 
@@ -40,8 +40,8 @@ OptionsMenu =
 		{
 			text = TXT.Menu.Sound,
 			desc = TXT.MenuDesc.Sound,
-			x	 = -1,
-			y	 = 390,
+			x	 = 15,
+			y	 = 470,
 			action = "PainMenu:ActivateScreen(SoundOptions)",
 		},
 
@@ -49,16 +49,24 @@ OptionsMenu =
 		{
 			text = TXT.Menu.Video,
 			desc = TXT.MenuDesc.Video,
-			x	 = -1,
-			y	 = 470,
+			x	 = 15,
+			y	 = 550,
 			action = "PainMenu:ActivateScreen(VideoOptions)",
+		},
+		PkGui =
+		{
+			text = "PK++GUI",
+			desc = "Extra multiplayer tweakings for tournament play",
+			x	 = 15,
+			y	 = 710,
+			action = "PainMenu:ActivateScreen(Pkgui)",
 		},
 --[[		
 		AdvancedOptions =
 		{
 			text = TXT.Menu.AdvancedVideo,
 			desc = TXT.MenuDesc.AdvancedVideo,
-			x	 = -1,
+			x	 = 15,
 			y	 = 550,
 			action = "PainMenu:ActivateScreen(AdvancedVideoOptions)",
 		},]]--

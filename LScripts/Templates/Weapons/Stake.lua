@@ -149,6 +149,9 @@ function Stake:Tick(delta)
             local grenade = CloneTemplate("Grenade.CItem")
             grenade._Entity = self._Entity
             grenade.ExplosionStrength = s.ComboExplosionStrength
+            if(MPCfg.ProPlus)then
+            	grenade.ExplosionStrength = 5000
+            end
             grenade.ExplosionRange = s.ComboExplosionRange
             grenade.Damage = s.ComboExplosionDamage
             grenade.ObjOwner = self.ObjOwner
@@ -362,9 +365,11 @@ function Stake:OnHitSomething(se,e,mode)
         ENTITY.KillAllChildrenByName(se,"weapons/stake/stake_onfly-loop")
         if ENTITY.KillAllChildrenByName(se,"stakeflame") then -- burning?
             -- add smoke
+            if not Cfg.NoSmoke then
             local smokefx = AddPFX("GrenadeSmoke",1)
             PARTICLE.SetParentOffset(smokefx,0,0,0.4)
-            ENTITY.RegisterChild(se,smokefx)       
+            ENTITY.RegisterChild(se,smokefx)   
+            end    
         end
         
     end
@@ -395,7 +400,7 @@ function Stake:OnHitSomething(se,e,mode)
 						ENTITY.SetTimeToDie(ke,FRand(1,2))
 					end
 				end
-				AddPFX("stakeHitWall",0.25,Vector:New(px,py,pz),r)
+				if not Cfg.NoSmoke then AddPFX("stakeHitWall",0.25,Vector:New(px,py,pz),r) end
 			end
 		else
 			

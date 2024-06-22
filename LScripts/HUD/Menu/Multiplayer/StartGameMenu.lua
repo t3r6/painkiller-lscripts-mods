@@ -4,10 +4,12 @@ StartGameMenu =
 	bgEndFrame   = { 180, 267, 291 },
 
 	firstTimeShowItems = 80,
+	fontBig		= "timesbd",
+	fontSmall	= "timesbd",
 
 	backAction = "PainMenu:ActivateScreen(MultiplayerMenu)",
 	
-	textColor	= R3D.RGBA( 100, 100, 100, 255 ),
+	textColor	= R3D.RGBA( 255, 255, 255, 255 ),
 	disabledColor = R3D.RGBA( 155, 155, 155, 255 ),
 	
 	useItemBG = true,
@@ -54,6 +56,15 @@ StartGameMenu =
 		{
 			text = "People Can Fly",
 			desc = "Blow your opponent sky high and finish him midair",
+			x	 = -1,
+			y	 = 530,
+			action = "PainMenu:ActivateScreen(CreateServerMenu)",
+		},
+		
+		ClanArena =
+		{
+			text = "Clan Arena",
+			desc = "Prove your worth",
 			x	 = -1,
 			y	 = 530,
 			action = "PainMenu:ActivateScreen(CreateServerMenu)",

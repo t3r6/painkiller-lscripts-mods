@@ -205,7 +205,7 @@ function CAction:Action_CameraFromPlayer(state)
 end
 --============================================================================
 function CAction:Action_Message(textID)
---    CONSOLE.AddMessage(HUD.PrepareString(Languages.Texts[textID]))
+--    CONSOLE_AddMessage(HUD.PrepareString(Languages.Texts[textID]))
 	Hud._overlayMessage = HUD.PrepareString(Languages.Texts[textID])
 	Hud._overlayMsgStart = 0
 end
@@ -889,7 +889,7 @@ function CAction:Action_ExplosionFX(x,y,z,fxscale)
     SOUND.Play3D("weapons/machinegun/rocket_hit",x,y,z,30,200)
     
     local r = Quaternion:New_FromNormal(nx,ny,nz)
-    AddObject("FX_rexplode.CActor",fxscale,Vector:New(x,y,z),r,true) 
+    if not Cfg.NoExplosions then AddObject("FX_rexplode.CActor",fxscale,Vector:New(x,y,z),r,true) end
     
     -- physical parts
     local px,py,pz = x+nx/2,y+ny/2,z+nz/2
