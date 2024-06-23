@@ -543,6 +543,18 @@ function CPlayer:ClientTick(delta)
         self.RightVector:Set(CAM.GetRightVector())
     end
 
+    -- Autojump
+	if IsBitFlag(self.CurAction,Actions.Jump) then
+		if not self.autoJumped and PLAYER.FloorCheck(self._Entity) then
+			self.CurAction = AddBitFlag(self.CurAction,Actions.Jump)
+			self.autoJumped = true
+		else
+			self.CurAction = ReplaceBitFlag(self.CurAction,Actions.Jump,0)
+			self.autoJumped = nil
+		end
+	end
+    -- Autojump end
+	
     -- na serwer przesylam nie czejsciej niz ustawiona ilosc fpsow lub przy kazdej zmianie stanu
     if Game.GMode == GModes.MultiplayerClient  then
         -- predykcja na kliencie
